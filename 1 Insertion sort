@@ -1,0 +1,29 @@
+public class Sort_insertion {
+
+    public static int[] insertion_Sort(int nums[]){
+        int n=nums.length;
+
+        for(int i=0;i<n;i++){
+            int key=nums[i];
+            int j=i-1;
+
+            while (j >=0 && nums[j] > key) {
+                nums[j+1]=nums[j];
+                j--;
+            }
+            nums[j+1]=key;
+        }
+        return nums;
+    }
+
+    public static void main(String[] args) {
+        int nums[]={2,7,1,9,4,6};
+        int result[]=insertion_Sort(nums);
+        for(int i=0;i<nums.length;i++){
+            System.out.print(nums[i]+" ");
+        }
+    }
+}
+
+/*ime Complexity: Worst and average case: O(n²), Best case (already sorted): O(n)
+Space Complexity: O(1) — sorting is done in-place without extra memory.*/
