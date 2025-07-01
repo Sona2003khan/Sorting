@@ -15,6 +15,26 @@ public class Sort_insertion {
         }
         return nums;
     }
+/*public static int[] insertion_Sort(int nums[], int n) {
+        // Base case
+        if (n <= 1) {
+            return nums;
+        }
+
+        // Recursive sort for first n-1 elements
+        insertion_Sort(nums, n - 1);
+
+        int key = nums[n - 1];
+        int j = n - 2;
+
+        while (j >= 0 && nums[j] > key) {
+            nums[j + 1] = nums[j];
+            j--;
+        }
+        nums[j + 1] = key;
+
+        return nums;
+    }*/
 
     public static void main(String[] args) {
         int nums[]={2,7,1,9,4,6};
