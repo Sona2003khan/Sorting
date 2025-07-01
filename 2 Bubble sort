@@ -15,6 +15,24 @@ public class Sort_bubble {
         return nums;
     }
 
+/*public static int[] bubble_Sort(int nums[], int n) {
+        // Base case
+        if (n == 1) {
+            return nums;
+        }
+
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                int temp = nums[i];
+                nums[i] = nums[i + 1];
+                nums[i + 1] = temp;
+            }
+        }
+
+        // Recursive call
+        return bubble_Sort(nums, n - 1);
+    }*/
+
     public static void main(String[] args) {
         int nums[]={2,7,1,9,4,6};
         int result[]=bubble_Sort(nums);
