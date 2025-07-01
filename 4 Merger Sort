@@ -1,0 +1,64 @@
+public class Sort_merge{
+
+    public static int[] merge_sort(int nums[] ,int n){
+        if(n<2){
+            return nums;
+        }
+        int mid=n/2;
+        int arrLeft[]=new int[mid];
+        int arrRight[]=new int[n-mid];
+
+        for(int i=0;i<mid;i++){
+            arrLeft[i]=nums[i];
+        }
+        for(int i=mid;i<n;i++){
+            arrRight[i-mid]=nums[i];
+        }
+
+        merge_sort(arrLeft ,mid);
+
+        merge_sort(arrRight ,n-mid);
+
+        sort(nums ,arrLeft ,arrRight,mid,n-mid);
+
+        return nums;
+
+    }
+
+    public static void sort(int arr[] ,int arrLeft[] ,int arrRight[] ,int n ,int m){
+        int i=0;
+        int j=0;
+        int k=0;
+        while(i<n && j<m){
+            if(arrLeft[i] < arrRight[j]){
+                arr[k++]=arrLeft[i++];
+            }
+            else{
+                arr[k++]=arrRight[j++];
+            }
+        }
+
+        while(i<n){
+            arr[k++]=arrLeft[i++];
+        }
+
+        while(j<m){
+            arr[k++]=arrRight[j++];
+        }
+
+    }
+
+    public static void main(String args[]){
+        int nums[]={5,7,9,2,1,6,0,5};
+        int n=8;
+
+        int result[]=merge_sort(nums ,n);
+        for(int i=0;i<result.length;i++){
+            System.out.print(result[i]+" ");
+        }
+    }
+}
+
+/*Time Complexity: O(n log n) – due to repeatedly dividing the array and merging.
+
+Space Complexity: O(n) – for creating temporary left and right subarrays during merge.*/
